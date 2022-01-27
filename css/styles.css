@@ -34,7 +34,7 @@
 
 .buttons {
   display: grid;
-  grid-template-areas: "ac plus-minus percent division" "seven eigth nine myltiply" "four five six minus" "one two three plus" "zero zero dot equal";
+  grid-template-areas: 'ac plus-minus percent division' 'seven eigth nine myltiply' 'four five six minus' 'one two three plus' 'zero zero dot equal';
   grid-gap: 10px;
   justify-items: center;
 }
@@ -71,3 +71,6 @@
   background: var(--descript-color);
   color: var(--accent-btn-color);
 }
+/* .zero-position {
+  text-align: start;
+} */
