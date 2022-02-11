@@ -1,2 +1,2 @@
 # calculator
-"iPhone calculator" training project.
+Примитивный калькулятор "iPhone calculator"
