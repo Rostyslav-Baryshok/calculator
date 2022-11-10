@@ -19,12 +19,12 @@ function clearAll() {
 
 document.querySelector('.ac').onclick = clearAll;
 
-document.querySelector('.buttons').onclick = (event) => {
+document.querySelector('.buttons').onclick = event => {
   // нажато в не кнопки
   if (!event.target.classList.contains('btn')) return;
   // нажата кнопка clearAll AC
   if (event.target.classList.contains('ac')) return;
-  
+
   out.textContent = '';
   // получаю нажатую кнопку
   const key = event.target.textContent;
@@ -34,13 +34,11 @@ document.querySelector('.buttons').onclick = (event) => {
     if (b === '' && sign === '') {
       a += key;
       out.textContent = a;
-    }
-    else if (a !== '' && b !== '' && finish) {
+    } else if (a !== '' && b !== '' && finish) {
       b = key;
       finish = false;
       out.textContent = b;
-    }
-    else {
+    } else {
       b += key;
       out.textContent = b;
     }
@@ -60,28 +58,27 @@ document.querySelector('.buttons').onclick = (event) => {
   if (key === '=') {
     if (b === '') b = a;
     switch (sign) {
-          case '+':
-                   a = (+a) + (+b);
-              break;
-          case '-':
-              a = a - b;
-              break;
-          case 'x':
-              a = a * b;
-              break;
-          case '/':
-              if (b === '0') {
-                out.textContent = 'Ошибка';
-                a = '';
-                b = '';
-                sign = '';
-                return;
-              }
-              a = a / b;
-              break;
+      case '+':
+        a = +a + +b;
+        break;
+      case '-':
+        a = a - b;
+        break;
+      case 'x':
+        a = a * b;
+        break;
+      case '/':
+        if (b === '0') {
+          out.textContent = 'Ошибка';
+          a = '';
+          b = '';
+          sign = '';
+          return;
+        }
+        a = a / b;
+        break;
     }
     finish = true;
     out.textContent = a;
-    console.table(a, b, sign);
   }
-}
+};
