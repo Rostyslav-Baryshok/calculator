@@ -79,6 +79,6 @@ document.querySelector('.buttons').onclick = event => {
         break;
     }
     finish = true;
-    out.textContent = a;
+    out.textContent = a.toFixed(2);
   }
 };
